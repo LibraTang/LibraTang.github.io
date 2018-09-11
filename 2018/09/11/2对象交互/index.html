@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="对象交互面向对象，核心是观察一个对象是由什么组成的，有什么属性。 我们以数字钟为例:可以把它看成一个四位数的显示器，但更好的方法是看成两个两位数显示器的组合（小时、分钟）可以设计一个类，包含了两个对象，这两个对象进行组合、交互。 先构造一个Display类： 12345678910111213141516171819202122232425262728public class Display &amp;#">
+<meta name="description" content="对象交互面向对象，核心是观察一个对象是由什么组成的，有什么属性。 我们以数字钟为例:可以把它看成一个四位数的显示器，但更好的方法是看成两个两位数显示器的组合（小时、分钟）可以设计一个类，包含了两个对象，这两个对象进行组合、交互。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2对象交互">
 <meta property="og:url" content="http://yoursite.com/2018/09/11/2对象交互/index.html">
 <meta property="og:site_name" content="Warriors Champion!">
-<meta property="og:description" content="对象交互面向对象，核心是观察一个对象是由什么组成的，有什么属性。 我们以数字钟为例:可以把它看成一个四位数的显示器，但更好的方法是看成两个两位数显示器的组合（小时、分钟）可以设计一个类，包含了两个对象，这两个对象进行组合、交互。 先构造一个Display类： 12345678910111213141516171819202122232425262728public class Display &amp;#">
+<meta property="og:description" content="对象交互面向对象，核心是观察一个对象是由什么组成的，有什么属性。 我们以数字钟为例:可以把它看成一个四位数的显示器，但更好的方法是看成两个两位数显示器的组合（小时、分钟）可以设计一个类，包含了两个对象，这两个对象进行组合、交互。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-11T01:13:20.708Z">
+<meta property="og:updated_time" content="2018-09-11T01:16:13.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2对象交互">
-<meta name="twitter:description" content="对象交互面向对象，核心是观察一个对象是由什么组成的，有什么属性。 我们以数字钟为例:可以把它看成一个四位数的显示器，但更好的方法是看成两个两位数显示器的组合（小时、分钟）可以设计一个类，包含了两个对象，这两个对象进行组合、交互。 先构造一个Display类： 12345678910111213141516171819202122232425262728public class Display &amp;#">
+<meta name="twitter:description" content="对象交互面向对象，核心是观察一个对象是由什么组成的，有什么属性。 我们以数字钟为例:可以把它看成一个四位数的显示器，但更好的方法是看成两个两位数显示器的组合（小时、分钟）可以设计一个类，包含了两个对象，这两个对象进行组合、交互。">
 
 
 
@@ -301,6 +301,7 @@
       
         <h1 id="对象交互"><a href="#对象交互" class="headerlink" title="对象交互"></a>对象交互</h1><p>面向对象，核心是观察一个对象是由什么组成的，有什么属性。</p>
 <p>我们以数字钟为例:<br><br>可以把它看成一个四位数的显示器，但更好的方法是看成两个两位数显示器的组合（小时、分钟）<br><br>可以设计一个类，包含了两个对象，这两个对象进行组合、交互。</p>
+<a id="more"></a>
 <p>先构造一个Display类：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Display</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> value = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> limit = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//构造函数</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Display</span><span class="params">(<span class="keyword">int</span> limit)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.limit = limit;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">increase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		value++;</span><br><span class="line">		<span class="keyword">if</span>(value == limit) &#123;</span><br><span class="line">			value = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> value;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Display d = <span class="keyword">new</span> Display(<span class="number">24</span>);</span><br><span class="line">		<span class="keyword">for</span>(;;) &#123;</span><br><span class="line">			d.increase();</span><br><span class="line">			System.out.println(d.getValue());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>但只有一个Display类还不够，要想办法让“小时”和“分钟”互动起来。能不能在“分钟”这个对象里直接对“小时”操作呢？<br><br><strong>这样是不合适的，因为“小时”和“分钟”属于同一个类，如果需要这样操作的话，在“分钟”这个对象里就需要多一些代码，整个程序会变得混乱。</strong></p>
