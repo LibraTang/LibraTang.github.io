@@ -3,22 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>archives: 2018 | Not Yet</title>
+  <title>集合类层次结构 | Not Yet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="MODEST DARING HIDDEN">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Not Yet">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="Collections（工具类）和Collection（集合顶层接口）的区别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合类层次结构">
+<meta property="og:url" content="http://yoursite.com/2018/09/24/集合类层次结构/index.html">
 <meta property="og:site_name" content="Not Yet">
-<meta property="og:description" content="MODEST DARING HIDDEN">
+<meta property="og:description" content="Collections（工具类）和Collection（集合顶层接口）的区别">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/LibraTang/Pics/blob/master/Java-Notes/collection%E5%92%8Ccollections%E5%8C%BA%E5%88%AB.jfif">
+<meta property="og:image" content="https://github.com/LibraTang/Pics/blob/master/Java-Notes/%E9%9B%86%E5%90%88%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.jpeg">
+<meta property="og:image" content="https://github.com/LibraTang/Pics/blob/master/Java-Notes/Map%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.jfif">
+<meta property="og:updated_time" content="2018-09-24T01:43:36.851Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Not Yet">
-<meta name="twitter:description" content="MODEST DARING HIDDEN">
+<meta name="twitter:title" content="集合类层次结构">
+<meta name="twitter:description" content="Collections（工具类）和Collection（集合顶层接口）的区别">
+<meta name="twitter:image" content="https://github.com/LibraTang/Pics/blob/master/Java-Notes/collection%E5%92%8Ccollections%E5%8C%BA%E5%88%AB.jfif">
   
     <link rel="alternate" href="/atom.xml" title="Not Yet" type="application/atom+xml">
   
@@ -57,8 +62,6 @@
   
 
   
-    <link rel="stylesheet" href="/css/archive.css" >
-  
   
   
 
@@ -66,7 +69,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -89,7 +92,7 @@
             
               <a class="brand" style="
                  margin-top: 0px;"  
-                 >
+                href="#" data-toggle="modal" data-target="#myModal" >
                   <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.png">
               </a>
             
@@ -126,245 +129,87 @@
             
       <div id="content" class="outer">
         
-          <section id="main">
-  <div class="archives-tags-wrap"><blockquote><span>There are 6 posts in total till now.</span></blockquote>
-
-
-<!-- 分页显示 -->
-
-	
-	
-		
-		
-		  
-		  
-		  <section class="archives-wrap">
-		    <div class="archive-year-wrap">
-		      <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
-		    </div>
-		    <div class="archives">
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2018/09/24/JVM运行时数据区/" class="archive-article-date">
-	  <time datetime="2018-09-24T01:40:20.000Z" itemprop="datePublished">2018-09-24</time>
-	</a>
-
-      
+          <section id="main" style="float:none;"><article id="post-集合类层次结构" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/09/24/JVM运行时数据区/">JVM运行时数据区</a>
+    <h1 class="thumb" class="article-title" itemprop="name">
+      集合类层次结构
     </h1>
   
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
+      </header>
+    
+    <div class="article-meta">
       
-	<a href="/2018/09/24/集合类层次结构/" class="archive-article-date">
+	<a href="/2018/09/24/集合类层次结构/" class="article-date">
 	  <time datetime="2018-09-24T01:40:03.000Z" itemprop="datePublished">2018-09-24</time>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/09/24/集合类层次结构/">集合类层次结构</a>
-    </h1>
-  
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+	  
+		
+		
+		  <h2 id="Collections（工具类）和Collection（集合顶层接口）的区别"><a href="#Collections（工具类）和Collection（集合顶层接口）的区别" class="headerlink" title="Collections（工具类）和Collection（集合顶层接口）的区别"></a>Collections（工具类）和Collection（集合顶层接口）的区别</h2><p><img src="https://github.com/LibraTang/Pics/blob/master/Java-Notes/collection%E5%92%8Ccollections%E5%8C%BA%E5%88%AB.jfif" alt="collections和collection区别"></p>
+<a id="more"></a>
+<h2 id="Collection继承结构"><a href="#Collection继承结构" class="headerlink" title="Collection继承结构"></a>Collection继承结构</h2><p><img src="https://github.com/LibraTang/Pics/blob/master/Java-Notes/%E9%9B%86%E5%90%88%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.jpeg" alt="Collection继承结构"></p>
+<h2 id="Map类层次结构"><a href="#Map类层次结构" class="headerlink" title="Map类层次结构"></a>Map类层次结构</h2><p><img src="https://github.com/LibraTang/Pics/blob/master/Java-Notes/Map%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.jfif" alt="Map类层次结构"></p>
 
-    </header>
+		
+	  
+	</div>
+    <footer class="article-footer">
+      
+      
+      
+      
+        
+      
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/24/JVM运行时数据区/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JVM运行时数据区
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/24/异常类层次结构/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">异常类层次结构</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2018/09/24/异常类层次结构/" class="archive-article-date">
-	  <time datetime="2018-09-24T01:39:49.000Z" itemprop="datePublished">2018-09-24</time>
-	</a>
 
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/09/24/异常类层次结构/">异常类层次结构</a>
-    </h1>
-  
+<!-- Table of Contents -->
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2018/09/24/Java对象引用处理机制/" class="archive-article-date">
-	  <time datetime="2018-09-24T01:38:45.000Z" itemprop="datePublished">2018-09-24</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/09/24/Java对象引用处理机制/">Java对象引用处理机制</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2018/09/24/equals-和hashCode/" class="archive-article-date">
-	  <time datetime="2018-09-24T01:37:47.000Z" itemprop="datePublished">2018-09-24</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/09/24/equals-和hashCode/">equals()和hashCode()</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2018/09/24/String深入/" class="archive-article-date">
-	  <time datetime="2018-09-24T01:35:14.000Z" itemprop="datePublished">2018-09-24</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/09/24/String深入/">String深入</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-	
-	
-		</div></section>
-	
-
-	<!-- 页数指示器 -->
-	
-
-
-
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Collections（工具类）和Collection（集合顶层接口）的区别"><span class="nav-number">1.</span> <span class="nav-text">Collections（工具类）和Collection（集合顶层接口）的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection继承结构"><span class="nav-number">2.</span> <span class="nav-text">Collection继承结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map类层次结构"><span class="nav-number">3.</span> <span class="nav-text">Map类层次结构</span></a></li></ol>
+    
+    </div>
+  </aside>
 
 </section>
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Connect</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-          
-     			  <li><a href="https://github.com/LibraTang" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
-          
-   		
-          
-            <li><a href="mailto:tonchisjerry@gmail.com?subject=请联系我&body=我能帮你什么" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> 
-          
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a><span class="archive-list-count">6</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/09/24/JVM运行时数据区/">JVM运行时数据区</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/24/集合类层次结构/">集合类层次结构</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/24/异常类层次结构/">异常类层次结构</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/24/Java对象引用处理机制/">Java对象引用处理机制</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/24/equals-和hashCode/">equals()和hashCode()</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
       
@@ -457,6 +302,8 @@
 
 
 
+  <script src="/js/dialog.js"></script>
+
 
 
 
@@ -537,6 +384,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
