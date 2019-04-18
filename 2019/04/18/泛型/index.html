@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Not Enough">
 <meta property="og:description" content="泛型类先定义一个普通的Box类： 123456789class Box &amp;#123;    private String s;    public void set(String s) &amp;#123;        this.s = s;    &amp;#125;    public String get() &amp;#123;        return s;    &amp;#125;&amp;#125; 这样的Box类有">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-18T07:50:41.354Z">
+<meta property="og:updated_time" content="2019-04-18T08:06:11.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="泛型">
 <meta name="twitter:description" content="泛型类先定义一个普通的Box类： 123456789class Box &amp;#123;    private String s;    public void set(String s) &amp;#123;        this.s = s;    &amp;#125;    public String get() &amp;#123;        return s;    &amp;#125;&amp;#125; 这样的Box类有">
@@ -363,7 +363,7 @@
                 
               
 
-              <time title="创建时间：2019-04-18 15:49:42 / 修改时间：15:50:41" itemprop="dateCreated datePublished" datetime="2019-04-18T15:49:42+08:00">2019-04-18</time>
+              <time title="创建时间：2019-04-18 15:49:42 / 修改时间：16:06:11" itemprop="dateCreated datePublished" datetime="2019-04-18T15:49:42+08:00">2019-04-18</time>
             
 
             
@@ -405,6 +405,7 @@
         <h2 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h2><p>先定义一个普通的Box类：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String s;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.s = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样的Box类有一个弊端是只能装入String类元素，可扩展性不好，使用泛型可以解决这个问题</p>
+<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="title">T</span>&gt; </span>&#123; <span class="comment">//泛型</span></span><br><span class="line">    <span class="keyword">private</span> T t;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.t = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样Box类就可以复用，我们可以将T替换成我们想要的类型</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Box&lt;Integer&gt; integerBox = <span class="keyword">new</span> Box&lt;Integer&gt;();</span><br><span class="line">Box&lt;String&gt; stringBox = <span class="keyword">new</span> Box&lt;String&gt;();</span><br></pre></td></tr></table></figure>

@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="将一个类定义在一个类或一个方法里面，这样的类称为内部类。一般来说内部类分为四种：成员内部类，局部内部类，匿名内部类，静态内部类  成员内部类定义于另一个类的内部，形式如下： 123456789101112131415class Circle &amp;#123;    private double radius = 0;    public static int count =1;        pub">
+  <meta name="description" content="将一个类定义在一个类或一个方法里面，这样的类称为内部类。一般来说内部类分为四种：成员内部类，局部内部类，匿名内部类，静态内部类">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="内部类">
 <meta property="og:url" content="http://yoursite.com/2019/04/18/内部类/index.html">
 <meta property="og:site_name" content="Not Enough">
-<meta property="og:description" content="将一个类定义在一个类或一个方法里面，这样的类称为内部类。一般来说内部类分为四种：成员内部类，局部内部类，匿名内部类，静态内部类  成员内部类定义于另一个类的内部，形式如下： 123456789101112131415class Circle &amp;#123;    private double radius = 0;    public static int count =1;        pub">
+<meta property="og:description" content="将一个类定义在一个类或一个方法里面，这样的类称为内部类。一般来说内部类分为四种：成员内部类，局部内部类，匿名内部类，静态内部类">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-18T07:55:56.542Z">
+<meta property="og:updated_time" content="2019-04-18T07:59:08.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内部类">
-<meta name="twitter:description" content="将一个类定义在一个类或一个方法里面，这样的类称为内部类。一般来说内部类分为四种：成员内部类，局部内部类，匿名内部类，静态内部类  成员内部类定义于另一个类的内部，形式如下： 123456789101112131415class Circle &amp;#123;    private double radius = 0;    public static int count =1;        pub">
+<meta name="twitter:description" content="将一个类定义在一个类或一个方法里面，这样的类称为内部类。一般来说内部类分为四种：成员内部类，局部内部类，匿名内部类，静态内部类">
 
 
 
@@ -363,7 +363,7 @@
                 
               
 
-              <time title="创建时间：2019-04-18 15:55:34 / 修改时间：15:55:56" itemprop="dateCreated datePublished" datetime="2019-04-18T15:55:34+08:00">2019-04-18</time>
+              <time title="创建时间：2019-04-18 15:55:34 / 修改时间：15:59:08" itemprop="dateCreated datePublished" datetime="2019-04-18T15:55:34+08:00">2019-04-18</time>
             
 
             
@@ -405,6 +405,7 @@
         <blockquote>
 <p>将一个类定义在一个类或一个方法里面，这样的类称为内部类。一般来说内部类分为四种：成员内部类，局部内部类，匿名内部类，静态内部类</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h2><p>定义于另一个类的内部，形式如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> radius = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> count =<span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Circle</span><span class="params">(<span class="keyword">double</span> radius)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.radius = radius;</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Draw</span> </span>&#123;     <span class="comment">//内部类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drawSahpe</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(radius);  <span class="comment">//外部类的private成员</span></span><br><span class="line">            System.out.println(count);   <span class="comment">//外部类的静态成员</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>成员内部类可以访问外部类的所有成员变量和成员方法，包括private成员和静态成员。</p>
