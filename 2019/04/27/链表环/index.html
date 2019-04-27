@@ -96,18 +96,17 @@
 
 
 
-  <meta name="description" content="留个坑……晚点写">
-<meta name="keywords" content="算法">
+  <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="链表环">
 <meta property="og:url" content="http://yoursite.com/2019/04/27/链表环/index.html">
 <meta property="og:site_name" content="Not Enough">
-<meta property="og:description" content="留个坑……晚点写">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-27T02:09:11.631Z">
+<meta property="og:image" content="https://github.com/LibraTang/Pics/blob/master/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8%E7%8E%AF.jpg?raw=true">
+<meta property="og:updated_time" content="2019-04-27T13:29:17.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="链表环">
-<meta name="twitter:description" content="留个坑……晚点写">
+<meta name="twitter:image" content="https://github.com/LibraTang/Pics/blob/master/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8%E7%8E%AF.jpg?raw=true">
 
 
 
@@ -363,7 +362,7 @@
                 
               
 
-              <time title="创建时间：2019-04-27 10:07:55 / 修改时间：10:09:11" itemprop="dateCreated datePublished" datetime="2019-04-27T10:07:55+08:00">2019-04-27</time>
+              <time title="创建时间：2019-04-27 10:07:55 / 修改时间：21:29:17" itemprop="dateCreated datePublished" datetime="2019-04-27T10:07:55+08:00">2019-04-27</time>
             
 
             
@@ -402,8 +401,24 @@
       
 
       
-        <blockquote>
-<p>留个坑……晚点写</p>
+        <p><img src="https://github.com/LibraTang/Pics/blob/master/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8%E7%8E%AF.jpg?raw=true" alt="链表环"></p>
+<a id="more"></a>
+<h2 id="判断一个链表中是否存在环"><a href="#判断一个链表中是否存在环" class="headerlink" title="判断一个链表中是否存在环"></a>判断一个链表中是否存在环</h2><p>用快慢指针的方法，时间复杂度O(n)，空间复杂度O(1)</p>
+<p>可以想象一个环形的跑道，两个人跑步，快的人必将追上慢的人，因为这是一个环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(head==<span class="keyword">null</span> || head.next==<span class="keyword">null</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       ListNode slow = head;</span><br><span class="line">       ListNode fast = head.next;</span><br><span class="line">       <span class="keyword">while</span>(slow != fast) &#123;</span><br><span class="line">           <span class="keyword">if</span>(fast==<span class="keyword">null</span> || fast.next==<span class="keyword">null</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           slow = slow.next;</span><br><span class="line">           fast = fast.next.next;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="找到链表环的入口"><a href="#找到链表环的入口" class="headerlink" title="找到链表环的入口"></a>找到链表环的入口</h2><p>首先知道：</p>
+<ul>
+<li>fast和slow一定会在环内相遇</li>
+<li>在slow走完环的第一圈之前相遇</li>
+</ul>
+<p>解释下第二点：</p>
+<p>假设环外链表长度为<code>a</code>，环长度为<code>b</code>，fast和slow分别走了<code>2l</code>和<code>l</code>长度，fast和slow走了<code>n1</code>和<code>n2</code>圈</p>
+<p>那么：<code>2l-a-bn1 = l-a-bn2</code>，最终得到：<code>l = (n1-n2)b</code>，要让这个等式成立有无穷解，第一个就是当<code>n1=1 n2=0 l=b</code>的时候，这时候fast和slow第一次相遇，所以在slow走完环的第一圈之前相遇</p>
+<p>又由<code>b = l</code>，设相遇点到环入口的距离为<code>x</code>，所以<code>b = l = l-a+x</code>，进一步得到<code>a = x</code>，即链表起点到环入口的距离等于相遇点到环入口的距离</p>
+<p>因此以下代码可以找到环的入口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> ListNode <span class="title">detectCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        ListNode slow = head, fast = head, start = head;</span><br><span class="line">        <span class="keyword">while</span> (fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            <span class="keyword">if</span> (slow == fast) &#123;</span><br><span class="line">                <span class="comment">//快慢指针相遇后，起点和慢指针一起前进，相遇点即为环入口</span></span><br><span class="line">                <span class="keyword">while</span> (slow != start) &#123;</span><br><span class="line">                    slow = slow.next;</span><br><span class="line">                    start = start.next;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> start;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>链表环的应用 <a href="https://leetcode.com/problems/find-the-duplicate-number/" target="_blank" rel="noopener">leetcode 287</a></p>
 </blockquote>
 
       
@@ -493,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -588,6 +612,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#判断一个链表中是否存在环"><span class="nav-number">1.</span> <span class="nav-text">判断一个链表中是否存在环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找到链表环的入口"><span class="nav-number">2.</span> <span class="nav-text">找到链表环的入口</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
