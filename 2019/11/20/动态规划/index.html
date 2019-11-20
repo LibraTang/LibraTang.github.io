@@ -96,22 +96,18 @@
 
 
 
-  <meta name="description" content="Collections（工具类）和Collection（集合顶层接口）的区别">
-<meta name="keywords" content="Java">
+  <meta name="description" content="记住之前的答案  步骤 问题拆解，找到问题之间的具体联系 状态定义 递推方程推导 实现  前两点是重点，前两个步骤顺利完成的话，递推方程和代码实现都很轻松了 状态定义其实是思考在解决一个问题的时候我们做了什么事情，得出了什么样的答案，对于这个问题，当前问题的答案就是当前的状态">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="集合类层次结构">
-<meta property="og:url" content="http://yoursite.com/2018/09/24/集合类层次结构/index.html">
+<meta property="og:title" content="动态规划">
+<meta property="og:url" content="http://yoursite.com/2019/11/20/动态规划/index.html">
 <meta property="og:site_name" content="Not Enough">
-<meta property="og:description" content="Collections（工具类）和Collection（集合顶层接口）的区别">
+<meta property="og:description" content="记住之前的答案  步骤 问题拆解，找到问题之间的具体联系 状态定义 递推方程推导 实现  前两点是重点，前两个步骤顺利完成的话，递推方程和代码实现都很轻松了 状态定义其实是思考在解决一个问题的时候我们做了什么事情，得出了什么样的答案，对于这个问题，当前问题的答案就是当前的状态">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/LibraTang/Pics/blob/master/Java-Notes/collection%E5%92%8Ccollections%E5%8C%BA%E5%88%AB.jfif?raw=true">
-<meta property="og:image" content="https://github.com/LibraTang/Pics/blob/master/Java-Notes/%E9%9B%86%E5%90%88%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.jpeg?raw=true">
-<meta property="og:image" content="https://github.com/LibraTang/Pics/blob/master/Java-Notes/Map%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.jfif?raw=true">
-<meta property="og:updated_time" content="2019-11-20T13:08:26.696Z">
+<meta property="og:updated_time" content="2019-11-20T14:00:51.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="集合类层次结构">
-<meta name="twitter:description" content="Collections（工具类）和Collection（集合顶层接口）的区别">
-<meta name="twitter:image" content="https://github.com/LibraTang/Pics/blob/master/Java-Notes/collection%E5%92%8Ccollections%E5%8C%BA%E5%88%AB.jfif?raw=true">
+<meta name="twitter:title" content="动态规划">
+<meta name="twitter:description" content="记住之前的答案  步骤 问题拆解，找到问题之间的具体联系 状态定义 递推方程推导 实现  前两点是重点，前两个步骤顺利完成的话，递推方程和代码实现都很轻松了 状态定义其实是思考在解决一个问题的时候我们做了什么事情，得出了什么样的答案，对于这个问题，当前问题的答案就是当前的状态">
 
 
 
@@ -119,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2018/09/24/集合类层次结构/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/11/20/动态规划/"/>
 
 
 
@@ -129,7 +125,7 @@
   };
 </script>
 
-  <title>集合类层次结构 | Not Enough</title>
+  <title>动态规划 | Not Enough</title>
   
 
 
@@ -324,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/集合类层次结构/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/动态规划/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Libra Tang"/>
@@ -341,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">集合类层次结构
+          <h1 class="post-title" itemprop="name headline">动态规划
 
               
             
@@ -367,24 +363,12 @@
                 
               
 
-              <time title="创建时间：2018-09-24 09:40:03" itemprop="dateCreated datePublished" datetime="2018-09-24T09:40:03+08:00">2018-09-24</time>
+              <time title="创建时间：2019-11-20 21:15:43 / 修改时间：22:00:51" itemprop="dateCreated datePublished" datetime="2019-11-20T21:15:43+08:00">2019-11-20</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-20 21:08:26" itemprop="dateModified" datetime="2019-11-20T21:08:26+08:00">2019-11-20</time>
               
             
           </span>
@@ -418,10 +402,58 @@
       
 
       
-        <h2 id="Collections（工具类）和Collection（集合顶层接口）的区别"><a href="#Collections（工具类）和Collection（集合顶层接口）的区别" class="headerlink" title="Collections（工具类）和Collection（集合顶层接口）的区别"></a>Collections（工具类）和Collection（集合顶层接口）的区别</h2><p><img src="https://github.com/LibraTang/Pics/blob/master/Java-Notes/collection%E5%92%8Ccollections%E5%8C%BA%E5%88%AB.jfif?raw=true" alt="collections和collection区别"></p>
+        <blockquote>
+<p>记住之前的答案</p>
+</blockquote>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul>
+<li>问题拆解，找到问题之间的具体联系</li>
+<li>状态定义</li>
+<li>递推方程推导</li>
+<li>实现</li>
+</ul>
+<p>前两点是重点，前两个步骤顺利完成的话，递推方程和代码实现都很轻松了</p>
+<p><strong>状态定义</strong>其实是思考在解决一个问题的时候我们做了什么事情，得出了什么样的答案，对于这个问题，当前问题的答案就是当前的状态</p>
 <a id="more"></a>
-<h2 id="Collection继承结构"><a href="#Collection继承结构" class="headerlink" title="Collection继承结构"></a>Collection继承结构</h2><p><img src="https://github.com/LibraTang/Pics/blob/master/Java-Notes/%E9%9B%86%E5%90%88%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.jpeg?raw=true" alt="Collection继承结构"></p>
-<h2 id="Map类层次结构"><a href="#Map类层次结构" class="headerlink" title="Map类层次结构"></a>Map类层次结构</h2><p><img src="https://github.com/LibraTang/Pics/blob/master/Java-Notes/Map%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.jfif?raw=true" alt="Map类层次结构"></p>
+<h1 id="题目实战"><a href="#题目实战" class="headerlink" title="题目实战"></a>题目实战</h1><h2 id="爬楼梯"><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h2><blockquote>
+<p>最基础的动态规划问题</p>
+<p>题目来源：<a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener">LeetCode70</a></p>
+</blockquote>
+<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><ul>
+<li><p>问题拆解</p>
+<p>我们到第 n 个楼梯可以通过第 n-1 个楼梯和第 n-2 个楼梯，因此第 n 个问题可以拆解成第 n-1 个问题和第 n-2 个问题，然后又可以继续拆解，直到第0个问题</p>
+</li>
+<li><p>状态定义</p>
+<p>通过问题拆解，我们可以将第 i 个状态定义为：<strong>从起点到达第 i 个楼梯的路径总数</strong></p>
+</li>
+<li><p>递推方程</p>
+<p>由前两个步骤容易得出递推方程：<code>dp[i] = dp[i-1] + dp[i-2]</code></p>
+</li>
+<li><p>实现</p>
+<p>我们需要一个初始值方便我们的计算，而初始位置不需要移动，所以<code>dp[0] = 0</code>，<code>dp[1] = 1</code>，<code>dp[2] = 2</code>，通过这几个初始值可以进行递推</p>
+</li>
+</ul>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>];  <span class="comment">// 多开一位，考虑起始位置</span></span><br><span class="line"></span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">0</span>; dp[<span class="number">1</span>] = <span class="number">1</span>; dp[<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三角形最小路径和"><a href="#三角形最小路径和" class="headerlink" title="三角形最小路径和"></a>三角形最小路径和</h2><blockquote>
+<p><a href="https://leetcode.com/problems/triangle/" target="_blank" rel="noopener">LeetCode120</a></p>
+</blockquote>
+<h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h3><ul>
+<li><p>问题拆解</p>
+<p>对于这道题问题是求出最小路径和，关键是路径，和爬楼梯类似，<code>[i][j]</code>位置的元素肯定经过<code>[i-1][j]</code>或<code>[i-1][j-1]</code>，因此经过这个元素的路径可以拆解成上面的一个或两个元素的路径和得到</p>
+</li>
+<li><p>状态定义</p>
+<p>这道思考有两种方式：一种是从上到下，一种是从下到上。如果用从上到下的方法，会发现在考虑下面元素的时候，起始元素的路径只会从<code>[i-1][j]</code>获得，而最后一个元素的路径只会从<code>[i-1][j-1]</code>获得，这样不方便实现，但考虑从下到上就不会有这个问题。状态的定义就变成：<strong>最后一行元素到当前元素的最小路径和</strong></p>
+</li>
+<li><p>递推方程</p>
+<p><code>dp[i][j] = Math.min(dp[i+1][j], dp[i+1][j+1]) + triangle[i][j]</code></p>
+</li>
+<li><p>实现</p>
+<p>初始化时将最后一行的元素填入dp数组中，然后递推即可</p>
+</li>
+</ul>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; triangle)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = triangle.size();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n][n];</span><br><span class="line"></span><br><span class="line">    List&lt;Integer&gt; lastRow = triangle.get(n - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//初始化最后一行</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        dp[n - <span class="number">1</span>][i] = lastRow.get(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">2</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">        List&lt;Integer&gt; row = triangle.get(i);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i + <span class="number">1</span>; ++j) &#123;</span><br><span class="line">            dp[i][j] = Math.min(dp[i + <span class="number">1</span>][j], dp[i + <span class="number">1</span>][j + <span class="number">1</span>]) + row.get(j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="不同路径"><a href="#不同路径" class="headerlink" title="不同路径"></a>不同路径</h2><blockquote>
+<p>To be continue…</p>
+</blockquote>
 
       
     </div>
@@ -445,7 +477,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
           
         </div>
       
@@ -458,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/24/异常类层次结构/" rel="next" title="异常类层次结构">
-                <i class="fa fa-chevron-left"></i> 异常类层次结构
+              <a href="/2019/11/11/常见排序算法/" rel="next" title="常见排序算法">
+                <i class="fa fa-chevron-left"></i> 常见排序算法
               </a>
             
           </div>
@@ -467,10 +499,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/24/JVM运行时数据区/" rel="prev" title="JVM运行时数据区">
-                JVM运行时数据区 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -625,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Collections（工具类）和Collection（集合顶层接口）的区别"><span class="nav-number">1.</span> <span class="nav-text">Collections（工具类）和Collection（集合顶层接口）的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection继承结构"><span class="nav-number">2.</span> <span class="nav-text">Collection继承结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map类层次结构"><span class="nav-number">3.</span> <span class="nav-text">Map类层次结构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#步骤"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目实战"><span class="nav-number">2.</span> <span class="nav-text">题目实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#爬楼梯"><span class="nav-number">2.1.</span> <span class="nav-text">爬楼梯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解析"><span class="nav-number">2.1.1.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">2.1.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三角形最小路径和"><span class="nav-number">2.2.</span> <span class="nav-text">三角形最小路径和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同路径"><span class="nav-number">2.3.</span> <span class="nav-text">不同路径</span></a></li></ol></li></ol></div>
             
 
           </div>
