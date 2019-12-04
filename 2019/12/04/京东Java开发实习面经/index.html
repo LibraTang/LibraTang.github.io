@@ -96,20 +96,18 @@
 
 
 
-  <meta name="description" content="关于String不可改变的特性 声明String对象  1String s = &quot;abc&quot;; 此时会在堆内存中生成一个新的String对象，栈内存中的引用s指向它  将一个字符串变量赋值给另一个String  1String s2 = s; 此时栈内存中的引用s2与s指向同一个String对象”abc”  字符串连接  1s = s.concat(&quot;def&quot;); 此时在堆内存中新生成了String">
-<meta name="keywords" content="Java">
+  <meta name="description" content="共两面，都是电话面  一面 自我介绍 介绍 GC 相关算法，对 G1 了解吗？ LinkedList 和 ArrayList的区别？ Thread里start()和run()的区别？ 了解哪些设计模式？说一说最熟悉的一种设计模式，用生活中的场景举例。如何实现的？ static和final分别什么时候使用？ 如何判断一个链表有环？ 一个有序数组，下标为 0-98，但存放的数据为 0-99 范围内的">
+<meta name="keywords" content="面经">
 <meta property="og:type" content="article">
-<meta property="og:title" content="String深入">
-<meta property="og:url" content="http://yoursite.com/2018/09/24/String深入/index.html">
+<meta property="og:title" content="京东Java开发实习面经">
+<meta property="og:url" content="http://yoursite.com/2019/12/04/京东Java开发实习面经/index.html">
 <meta property="og:site_name" content="Not Enough">
-<meta property="og:description" content="关于String不可改变的特性 声明String对象  1String s = &quot;abc&quot;; 此时会在堆内存中生成一个新的String对象，栈内存中的引用s指向它  将一个字符串变量赋值给另一个String  1String s2 = s; 此时栈内存中的引用s2与s指向同一个String对象”abc”  字符串连接  1s = s.concat(&quot;def&quot;); 此时在堆内存中新生成了String">
+<meta property="og:description" content="共两面，都是电话面  一面 自我介绍 介绍 GC 相关算法，对 G1 了解吗？ LinkedList 和 ArrayList的区别？ Thread里start()和run()的区别？ 了解哪些设计模式？说一说最熟悉的一种设计模式，用生活中的场景举例。如何实现的？ static和final分别什么时候使用？ 如何判断一个链表有环？ 一个有序数组，下标为 0-98，但存放的数据为 0-99 范围内的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/LibraTang/Pics/blob/master/Java-Notes/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA.png?raw=true">
-<meta property="og:updated_time" content="2019-11-20T13:09:04.312Z">
+<meta property="og:updated_time" content="2019-12-04T14:18:37.154Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="String深入">
-<meta name="twitter:description" content="关于String不可改变的特性 声明String对象  1String s = &quot;abc&quot;; 此时会在堆内存中生成一个新的String对象，栈内存中的引用s指向它  将一个字符串变量赋值给另一个String  1String s2 = s; 此时栈内存中的引用s2与s指向同一个String对象”abc”  字符串连接  1s = s.concat(&quot;def&quot;); 此时在堆内存中新生成了String">
-<meta name="twitter:image" content="https://github.com/LibraTang/Pics/blob/master/Java-Notes/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA.png?raw=true">
+<meta name="twitter:title" content="京东Java开发实习面经">
+<meta name="twitter:description" content="共两面，都是电话面  一面 自我介绍 介绍 GC 相关算法，对 G1 了解吗？ LinkedList 和 ArrayList的区别？ Thread里start()和run()的区别？ 了解哪些设计模式？说一说最熟悉的一种设计模式，用生活中的场景举例。如何实现的？ static和final分别什么时候使用？ 如何判断一个链表有环？ 一个有序数组，下标为 0-98，但存放的数据为 0-99 范围内的">
 
 
 
@@ -117,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2018/09/24/String深入/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/04/京东Java开发实习面经/"/>
 
 
 
@@ -127,7 +125,7 @@
   };
 </script>
 
-  <title>String深入 | Not Enough</title>
+  <title>京东Java开发实习面经 | Not Enough</title>
   
 
 
@@ -322,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/String深入/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/04/京东Java开发实习面经/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Libra Tang"/>
@@ -339,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">String深入
+          <h1 class="post-title" itemprop="name headline">京东Java开发实习面经
 
               
             
@@ -365,24 +363,12 @@
                 
               
 
-              <time title="创建时间：2018-09-24 09:35:14" itemprop="dateCreated datePublished" datetime="2018-09-24T09:35:14+08:00">2018-09-24</time>
+              <time title="创建时间：2019-12-04 16:01:16 / 修改时间：22:18:37" itemprop="dateCreated datePublished" datetime="2019-12-04T16:01:16+08:00">2019-12-04</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-20 21:09:04" itemprop="dateModified" datetime="2019-11-20T21:09:04+08:00">2019-11-20</time>
               
             
           </span>
@@ -416,40 +402,80 @@
       
 
       
-        <h2 id="关于String不可改变的特性"><a href="#关于String不可改变的特性" class="headerlink" title="关于String不可改变的特性"></a>关于String不可改变的特性</h2><ol>
-<li>声明String对象</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"abc"</span>;</span><br></pre></td></tr></table></figure>
-<p>此时会在堆内存中生成一个新的String对象，栈内存中的引用s指向它</p>
-<ol start="2">
-<li>将一个字符串变量赋值给另一个String</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String s2 = s;</span><br></pre></td></tr></table></figure>
-<p>此时栈内存中的引用s2与s指向同一个String对象”abc”</p>
-<ol start="3">
-<li>字符串连接</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = s.concat(<span class="string">"def"</span>);</span><br></pre></td></tr></table></figure>
-<p>此时在堆内存中新生成了String对象”abcdef”，栈内存中的s指向它（原来堆内存中的对象”abc”将被回收）</p>
-<a id="more"></a>
-<h2 id="字符串常量池"><a href="#字符串常量池" class="headerlink" title="字符串常量池"></a>字符串常量池</h2><p><strong>关于literal（字面量）</strong><br></p>
-<p>就是字符串、数字等值本身。当编码的时候写下一个值比如<code>10</code>，<code>&quot;abc&quot;</code>，这就是一个literal。</p>
-<h3 id="为什么需要字符串常量池"><a href="#为什么需要字符串常量池" class="headerlink" title="为什么需要字符串常量池"></a>为什么需要字符串常量池</h3><p>JVM为了提高性能和减少内存开销，为字符串开辟一个常量池，类似于缓存区。创建字符串常量时，首先检查字符串常量池中是否存在该字符串，若存在则返回引用实例，不存在则创建实例并放入池中。</p>
-<h3 id="字符串常量池实现基础"><a href="#字符串常量池实现基础" class="headerlink" title="字符串常量池实现基础"></a>字符串常量池实现基础</h3><ul>
-<li>字符串不可变所以不用担心数据冲突</li>
-<li>字符串常量池中有一个表，为池中的每个唯一的字符串对象维护一个引用，因此常量池中的对象不会被垃圾回收器回收</li>
+        <blockquote>
+<p>共两面，都是电话面</p>
+</blockquote>
+<h1 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h1><ul>
+<li>自我介绍</li>
+<li>介绍 GC 相关算法，对 G1 了解吗？</li>
+<li>LinkedList 和 ArrayList的区别？</li>
+<li>Thread里<code>start()</code>和<code>run()</code>的区别？</li>
+<li>了解哪些设计模式？说一说最熟悉的一种设计模式，用生活中的场景举例。如何实现的？</li>
+<li><code>static</code>和<code>final</code>分别什么时候使用？</li>
+<li>如何判断一个链表有环？</li>
+<li>一个有序数组，下标为 0-98，但存放的数据为 0-99 范围内的整形，共 100 个，快速找出那个缺失的数字</li>
+<li>在学习 Spring 的过程中掌握了哪些知识？</li>
+<li>讲一讲AOP</li>
+<li>Mybatis有和其它框架对比过吗？</li>
+<li>做项目的过程中遇到过什么问题？是怎么解决的？</li>
 </ul>
-<h3 id="字符串常量池位置"><a href="#字符串常量池位置" class="headerlink" title="字符串常量池位置"></a>字符串常量池位置</h3><p>位于方法区中</p>
-<p><img src="https://github.com/LibraTang/Pics/blob/master/Java-Notes/%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA.png?raw=true" alt="运行时数据区"></p>
-<p>方法区被所有线程共享，其中包含的都是在整个程序中永远唯一的元素，比如class，static变量</p>
-<h3 id="字符串对象创建"><a href="#字符串对象创建" class="headerlink" title="字符串对象创建"></a>字符串对象创建</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h1><ul>
+<li>自我介绍</li>
+<li>介绍项目中有哪些功能，主要负责哪些模块？详细讲讲你做的某个模块？<ul>
+<li>推荐是如何实现的？</li>
+<li>搜索是如何实现的？</li>
+<li>为什么选择使用 Mybatis，而不用其它的持久层框架？</li>
+<li>Mybatis如何处理参数比较多的情况下的多条件查询？如何接收这些参数？</li>
+<li>有考虑将查询条件封装吗？</li>
+<li>Mybatis中<code>#{}</code>和<code>${}</code>的区别？</li>
+<li>有涉及到多表查询吗？<ul>
+<li>在一条sql语句中实现多表查询？</li>
+<li><code>JOIN</code>和<code>LEFT JOIN</code>的区别？项目中有用到吗？这时候条件查询的关键字是什么？</li>
+</ul>
+</li>
+<li>介绍下订单系统？<ul>
+<li>如果订单状态变化的时候发生了异常，如何保证状态能正常切换或回滚？</li>
+</ul>
+</li>
+<li>系统中还有哪些模块讲讲？</li>
+<li>项目采用的是什么设计架构？</li>
+<li>用户密码在数据库中是如何存储的？如果要加密的话该如何处理？</li>
+<li>项目开发过程中，使用git有遇到什么问题吗？</li>
+<li>你们是如何利用git进行版本控制的？</li>
+</ul>
+</li>
+<li>了解 Spring Boot 中 JDK1.8 的特性吗？它有什么优点？</li>
+<li>对Java的面向对象是如何理解的？</li>
+<li>接口和抽象类的区别？</li>
+<li><code>StringBuilder</code>和<code>StringBuffer</code>的区别？</li>
+<li>在你们的项目中有用到多线程吗？实现多线程的方式？<code>runnable</code>和<code>callable</code>的区别？</li>
+<li>Spring的主要作用？</li>
+<li>Spring注入有哪些方式呢？</li>
+<li>Spring IOC有自动装配，<code>byName</code>和<code>byType</code>的区别？如果有多个相同的<code>type</code>会怎样？</li>
+<li>Spring Boot中用到了MVC设计模式，讲一讲？</li>
+<li>Spring MVC的整个响应处理流程讲一讲？</li>
+<li>Spring中用到了哪些设计模式？</li>
+<li>讲一讲你比较熟悉的设计模式？工厂模式的思想？</li>
+<li>讲讲你比较熟悉的数据结构</li>
+<li>栈的特点，和队列的区别？</li>
+<li>常见的排序算法讲一讲？快排的思想是什么？</li>
+<li>用Java实现快排的话，你会用什么数据结构去实现呢？</li>
+<li>你平时用的比较多的集合是哪些？</li>
+<li>Set的特点？和ArrayList, Map的区别？</li>
+<li>什么样的数据是由Map去存？</li>
+<li>ArrayList和其它集合结构的区别？</li>
+<li>常见的异常对象？</li>
+<li>如果程序报了空指针异常，你会用什么方式去排查？</li>
+<li><p>手撕代码：</p>
 <ul>
-<li>若常量池中有”abc”对象，则返回对应的引用实例（1个对象）</li>
-<li>若常量池中没有”abc”对象，则创建对应的实例对象放入池中，并在堆中也创建对应的实例对象（2个对象）</li>
+<li>两个长为n的字符串数组，其中存在大量相同的字符串，找到两个数组中相同的字符串并打印出来</li>
 </ul>
-<h3 id="intern"><a href="#intern" class="headerlink" title="intern()"></a>intern()</h3><p>通过new创建字符串对象不指向字符串池中任何一个对象，但是可以通过调用字符串的intern()方法来指向其中一个。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</span><br><span class="line">String s2 = <span class="string">"abc"</span>;</span><br><span class="line">System.out.println(s1 == s2); <span class="comment">//false</span></span><br><span class="line">System.out.println(s1.intern() == s2); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p>s1原本指向堆内存中的对象，调用intern()方法后指向池中的对象。</p>
+</li>
+<li><p>后面电话掉线了……就没录了，不太记得问了啥</p>
+</li>
+<li>平时有研究过代码规范吗？自己平时会注重这方面吗？</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>整个面试不算难，一面比较注重基础，二面项目部分问得比较多，穿插了对框架、数据库等的考察，最后面试官也给了我宝贵的建议。几天后顺利拿到了京东的offer，感谢京东对我的认可！</p>
 
       
     </div>
@@ -473,7 +499,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/面经/" rel="tag"># 面经</a>
           
         </div>
       
@@ -486,15 +512,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/12/03/快手一面凉经/" rel="next" title="快手一面凉经">
+                <i class="fa fa-chevron-left"></i> 快手一面凉经
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/24/equals-和hashCode/" rel="prev" title="equals()和hashCode()">
-                equals()和hashCode() <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -649,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于String不可改变的特性"><span class="nav-number">1.</span> <span class="nav-text">关于String不可改变的特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串常量池"><span class="nav-number">2.</span> <span class="nav-text">字符串常量池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要字符串常量池"><span class="nav-number">2.1.</span> <span class="nav-text">为什么需要字符串常量池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串常量池实现基础"><span class="nav-number">2.2.</span> <span class="nav-text">字符串常量池实现基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串常量池位置"><span class="nav-number">2.3.</span> <span class="nav-text">字符串常量池位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串对象创建"><span class="nav-number">2.4.</span> <span class="nav-text">字符串对象创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#intern"><span class="nav-number">2.5.</span> <span class="nav-text">intern()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一面"><span class="nav-number">1.</span> <span class="nav-text">一面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二面"><span class="nav-number">2.</span> <span class="nav-text">二面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
